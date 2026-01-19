@@ -1,3 +1,4 @@
+
 name: meri CI
 
 on: push
@@ -5,7 +6,7 @@ on: push
 jobs:
   build-test: 
     name: Build test and deploy
-    runs-on: ubuntu@latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: checkout latest code
@@ -13,6 +14,14 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # - name: Install dependencies
+      #   run: npm install
+
+      # - name: Run lint
+      #   run: npm run lint
 
     #   - name: Run lint
     #     run: npm run lint
